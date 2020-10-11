@@ -49,7 +49,7 @@ class SignIn extends React.Component {
                     </label>
                   </div>
                 </div>
-                <button className="btn btn-primary shadow-2 mb-4">Login</button>
+                <button className="btn btn-primary shadow-2 mb-4" onClick={()=>this.props.history.push('/panel/dashboard')}>Login</button>
                 <p className="mb-2 text-muted">
                   Forgot password? <NavLink to="/reset-password">Reset</NavLink>
                 </p>
