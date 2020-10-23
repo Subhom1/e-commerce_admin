@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { createStore } from "redux";
 import { Provider } from "react-redux";
 import { BrowserRouter as Router } from "react-router-dom";
 
@@ -9,10 +8,10 @@ import * as serviceWorker from "./serviceWorker";
 
 import config from "./config";
 
-import { Store } from "./store/store";
+import { store } from "./redux/store";
 
 const app = (
-  <Provider store={Store}>
+  <Provider store={store}>
     <Router basename={config.basename}>
       <App />
     </Router>

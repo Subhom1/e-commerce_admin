@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Dropdown } from "react-bootstrap";
 
 import Aux from "../../../../../hoc/_Aux";
-import DEMO from "../../../../../store/constant";
+import DEMO from "../../../../../redux/constant";
 import Avatar1 from "../../../../../assets/images/user/avatar-1.jpg";
 import { Link } from "react-router-dom";
 class NavRight extends Component {
@@ -27,7 +27,7 @@ class NavRight extends Component {
                     alt="User Profile"
                   />
                   <span>John Doe</span>
-                  <Link className="dud-logout" title="Logout" to="/login">
+                  <Link className="dud-logout" title="Logout" to="/">
                     <i className="feather icon-log-out" />
                   </Link>
                 </div>
