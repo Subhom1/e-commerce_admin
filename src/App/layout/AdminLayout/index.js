@@ -66,7 +66,6 @@ class AdminLayout extends Component {
         />
       ) : null;
     });
-
     return (
       <Aux>
         <Fullscreen enabled={this.props.isFullScreen}>
@@ -84,7 +83,7 @@ class AdminLayout extends Component {
                       <Suspense fallback={<Loader />}>
                         <Switch>
                           {menu}
-                          <Redirect from="/" to={this.props.defaultPath} />
+                          <Redirect from="/panel" to="/panel/dashboard" />
                         </Switch>
                       </Suspense>
                     </div>

@@ -16,24 +16,28 @@ const routes = [
     exact: true,
     name: "Dashboard",
     component: Dashboard,
+    authRoute: true,
   },
   {
     path: "/panel/orders",
     exact: true,
     name: "Orders",
     component: Orders,
+    authRoute: true,
   },
   {
     path: "/panel/products",
     exact: true,
     name: "Products",
     component: Products,
+    authRoute: true,
   },
   {
     path: "/panel/customers",
     exact: true,
     name: "Customers",
     component: Customers,
+    authRoute: true,
   },
 ];
 

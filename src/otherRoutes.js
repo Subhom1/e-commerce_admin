@@ -7,13 +7,20 @@ const ForgotPassword = React.lazy(() =>
 );
 
 const otherRoutes = [
-  { path: "/signup", exact: true, name: "SignUp", component: SignUp },
-  { path: "/", exact: true, name: "LogIn", component: LogIn },
+  {
+    path: "/signup",
+    exact: true,
+    name: "SignUp",
+    component: SignUp,
+    authRoute: false,
+  },
+  { path: "/", exact: true, name: "LogIn", component: LogIn, authRoute: false },
   {
     path: "/forgot-password",
     exact: true,
     name: "ForgotPassword",
     component: ForgotPassword,
+    authRoute: false,
   },
 ];
 
