@@ -44,12 +44,15 @@ class OutsideClick extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    collapseMenu: state.collapseMenu,
-  };
-};
-
+// const mapStateToProps = (state) => {
+//   return {
+//     collapseMenu: state.collapseMenu,
+//   };
+// };
+const mapStateToProps = (state) => ({
+  ...state.ui,
+  ...state.ui.config,
+});
 const mapDispatchToProps = (dispatch) => {
   return {
     onToggleNavigation: () => dispatch({ type: actionTypes.COLLAPSE_MENU }),

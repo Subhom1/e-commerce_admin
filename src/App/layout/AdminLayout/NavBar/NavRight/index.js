@@ -5,6 +5,7 @@ import Aux from "../../../../../hoc/_Aux";
 import DEMO from "../../../../../redux/constant";
 import Avatar1 from "../../../../../assets/images/user/avatar-1.jpg";
 import Firebase from "../../../../../firebase";
+import { connect } from "react-redux";
 class NavRight extends Component {
   state = {
     listOpen: false,
@@ -26,7 +27,7 @@ class NavRight extends Component {
                     className="img-radius"
                     alt="User Profile"
                   />
-                  <span>John Doe</span>
+                  <span>{this.props.displayName}</span>
                   <a
                     className="dud-logout"
                     title="Logout"
@@ -55,5 +56,5 @@ class NavRight extends Component {
     );
   }
 }
-
-export default NavRight;
+const mapStateToProps = (state) => ({ ...state.auth.currentUser });
+export default connect(mapStateToProps, null)(NavRight);

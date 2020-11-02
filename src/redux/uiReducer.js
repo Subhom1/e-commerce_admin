@@ -16,7 +16,7 @@ const uiReducer = (state = initialState, action) => {
     case actionTypes.COLLAPSE_MENU:
       return {
         ...state,
-        collapseMenu: !state.collapseMenu,
+        config: { ...state.config, collapseMenu: !state.config.collapseMenu },
       };
     case actionTypes.COLLAPSE_TOGGLE:
       if (action.menu.type === "sub") {

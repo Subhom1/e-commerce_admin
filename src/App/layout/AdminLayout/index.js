@@ -98,16 +98,19 @@ class AdminLayout extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    defaultPath: state.defaultPath,
-    isFullScreen: state.isFullScreen,
-    collapseMenu: state.collapseMenu,
-    configBlock: state.configBlock,
-    layout: state.layout,
-  };
-};
-
+// const mapStateToProps = (state) => {
+//   return {
+//     defaultPath: state.defaultPath,
+//     isFullScreen: state.isFullScreen,
+//     collapseMenu: state.collapseMenu,
+//     configBlock: state.configBlock,
+//     layout: state.layout,
+//   };
+// };
+const mapStateToProps = (state) => ({
+  ...state.ui,
+  ...state.ui.config,
+});
 const mapDispatchToProps = (dispatch) => {
   return {
     onFullScreenExit: () => dispatch({ type: actionTypes.FULL_SCREEN_EXIT }),

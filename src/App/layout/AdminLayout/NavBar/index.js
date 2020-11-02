@@ -40,7 +40,7 @@ class NavBar extends Component {
               <div className="b-bg">
                 <i className="feather icon-trending-up" />
               </div>
-              <span className="b-title">Datta Able</span>
+              <span className="b-title">Blaze Admin</span>
             </a>
           </div>
           <a className="mobile-menu" id="mobile-header" href={DEMO.BLANK_LINK}>
@@ -56,15 +56,18 @@ class NavBar extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    rtlLayout: state.rtlLayout,
-    headerBackColor: state.headerBackColor,
-    headerFixedLayout: state.headerFixedLayout,
-    collapseMenu: state.collapseMenu,
-  };
-};
-
+// const mapStateToProps = (state) => {
+//   return {
+//     rtlLayout: state.rtlLayout,
+//     headerBackColor: state.headerBackColor,
+//     headerFixedLayout: state.headerFixedLayout,
+//     collapseMenu: state.collapseMenu,
+//   };
+// };
+const mapStateToProps = (state) => ({
+  ...state.ui,
+  ...state.ui.config,
+});
 const mapDispatchToProps = (dispatch) => {
   return {
     onToggleNavigation: () => dispatch({ type: actionTypes.COLLAPSE_MENU }),

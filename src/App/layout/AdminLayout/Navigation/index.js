@@ -140,29 +140,32 @@ class Navigation extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    layout: state.layout,
-    preLayout: state.preLayout,
-    collapseMenu: state.collapseMenu,
-    layoutType: state.layoutType,
-    navBackColor: state.navBackColor,
-    navBackImage: state.navBackImage,
-    navIconColor: state.navIconColor,
-    navBrandColor: state.navBrandColor,
-    layout6Background: state.layout6Background,
-    layout6BackSize: state.layout6BackSize,
-    rtlLayout: state.rtlLayout,
-    navFixedLayout: state.navFixedLayout,
-    boxLayout: state.boxLayout,
-    navDropdownIcon: state.navDropdownIcon,
-    navListIcon: state.navListIcon,
-    navActiveListColor: state.navActiveListColor,
-    navListTitleColor: state.navListTitleColor,
-    navListTitleHide: state.navListTitleHide,
-  };
-};
-
+// const mapStateToProps = (state) => {
+//   return {
+//     layout: state.layout,
+//     preLayout: state.preLayout,
+//     collapseMenu: state.collapseMenu,
+//     layoutType: state.layoutType,
+//     navBackColor: state.navBackColor,
+//     navBackImage: state.navBackImage,
+//     navIconColor: state.navIconColor,
+//     navBrandColor: state.navBrandColor,
+//     layout6Background: state.layout6Background,
+//     layout6BackSize: state.layout6BackSize,
+//     rtlLayout: state.rtlLayout,
+//     navFixedLayout: state.navFixedLayout,
+//     boxLayout: state.boxLayout,
+//     navDropdownIcon: state.navDropdownIcon,
+//     navListIcon: state.navListIcon,
+//     navActiveListColor: state.navActiveListColor,
+//     navListTitleColor: state.navListTitleColor,
+//     navListTitleHide: state.navListTitleHide,
+//   };
+// };
+const mapStateToProps = (state) => ({
+  ...state.ui,
+  ...state.ui.config,
+});
 const mapDispatchToProps = (dispatch) => {
   return {
     onToggleNavigation: () => dispatch({ type: actionTypes.COLLAPSE_MENU }),

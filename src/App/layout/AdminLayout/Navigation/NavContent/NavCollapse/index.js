@@ -120,14 +120,18 @@ class NavCollapse extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    layout: state.layout,
-    isOpen: state.isOpen,
-    isTrigger: state.isTrigger,
-  };
-};
+// const mapStateToProps = (state) => {
+//   return {
+//     layout: state.layout,
+//     isOpen: state.isOpen,
+//     isTrigger: state.isTrigger,
+//   };
+// };
 
+const mapStateToProps = (state) => ({
+  ...state.ui,
+  ...state.ui.config,
+});
 const mapDispatchToProps = (dispatch) => {
   return {
     onCollapseToggle: (id, type) =>

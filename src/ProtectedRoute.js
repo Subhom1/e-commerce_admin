@@ -12,7 +12,6 @@ const ProtectedRoute = ({ component: Component, currentUser, ...rest }) => {
   let isLoggedIn =
     localStorage.is_user_loggedIn &&
     JSON.parse(localStorage.getItem("is_user_loggedIn"));
-  console.log(isLogin, isLoggedIn, "isLoggedIn");
   if (pending && isLoggedIn) {
     return <>Loading...</>;
   }
