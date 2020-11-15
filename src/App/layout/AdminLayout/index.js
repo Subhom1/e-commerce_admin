@@ -10,7 +10,7 @@ import Loader from "../Loader";
 import routes from "../../../routes";
 import Aux from "../../../hoc/_Aux";
 import * as actionTypes from "../../../redux/actions";
-
+import Profile from "../../components/Profile";
 import "./app.scss";
 
 class AdminLayout extends Component {
@@ -83,6 +83,12 @@ class AdminLayout extends Component {
                       <Suspense fallback={<Loader />}>
                         <Switch>
                           {menu}
+                          <Route
+                            path="/panel/profile"
+                            exact
+                            name="Profile"
+                            component={Profile}
+                          />
                           <Redirect from="/panel" to="/panel/dashboard" />
                         </Switch>
                       </Suspense>

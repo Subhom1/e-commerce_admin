@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Dropdown } from "react-bootstrap";
-
+import { Link } from "react-router-dom";
 import Aux from "../../../../../hoc/_Aux";
 import DEMO from "../../../../../redux/constant";
 import Avatar1 from "../../../../../assets/images/user/avatar-1.jpg";
@@ -43,9 +43,9 @@ class NavRight extends Component {
                 </div>
                 <ul className="pro-body">
                   <li>
-                    <a href={DEMO.BLANK_LINK} className="dropdown-item">
+                    <Link className="dropdown-item" to="/panel/profile">
                       <i className="feather icon-user" /> Profile
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </Dropdown.Menu>

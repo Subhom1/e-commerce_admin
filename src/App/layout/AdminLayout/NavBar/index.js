@@ -23,7 +23,7 @@ class NavBar extends Component {
     if (this.props.collapseMenu) {
       toggleClass = [...toggleClass, "on"];
     }
-
+    let pathname = localStorage.getItem("pathname");
     return (
       <Aux>
         <header className={headerClass.join(" ")}>
@@ -47,7 +47,7 @@ class NavBar extends Component {
             <i className="feather icon-more-horizontal" />
           </a>
           <div className="collapse navbar-collapse">
-            <NavLeft />
+            {pathname !== "/panel/profile" && <NavLeft />}
             <NavRight rtlLayout={this.props.rtlLayout} />
           </div>
         </header>
